@@ -1,0 +1,13 @@
+.todo-list {
+  margin: 0;
+
+  & li {
+    text-align: left;
+    cursor: pointer;
+
+    &.completed {
+      color: #ccc;
+      text-decoration: line-through;
+    }
+  }
+}
