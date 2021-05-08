@@ -1,7 +1,7 @@
-import './App.css';
 import React from 'react';
 import TodoFeature from './features/Todo';
 import AlbumFeature from './features/Album';
+import { Route } from 'react-router';
 
 function App() {
   const tuan = 1;
@@ -9,8 +9,9 @@ function App() {
   const isMale = true;
   return (
     <div className="App">
-      <TodoFeature />
-      <AlbumFeature />
+      Home Page
+      <Route path="/todos" component={TodoFeature} />
+      <Route path="/albums" component={AlbumFeature} />
     </div>
   );
 }
