@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import TodoFeature from './features/Todo';
 import AlbumFeature from './features/Album';
 import { Route } from 'react-router';
+import categoryApi from './api/categoryApi';
 
 function App() {
-  const tuan = 1;
-  const tuan2 = 222;
-  const isMale = true;
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const categoryList = await categoryApi.getAll();
+      console.log(categoryList);
+    };
+
+    fetchCategories();
+  }, []);
+
   return (
     <div className="App">
       Home Page

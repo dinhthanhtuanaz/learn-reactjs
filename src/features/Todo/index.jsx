@@ -4,9 +4,7 @@ import TodoList from './components/TodoList';
 import { useHistory, useLocation, useRouteMatch } from 'react-router';
 import queryString from 'query-string';
 
-TodoFeature.propTypes = {
-
-};
+TodoFeature.propTypes = {};
 
 function TodoFeature(props) {
   const location = useLocation();
@@ -51,33 +49,33 @@ function TodoFeature(props) {
     };
     console.log('newTodoList', newTodoList);
     setTodoList(newTodoList);
-  }
+  };
 
   const handleShowAllClick = () => {
     const queryParams = { status: 'all' };
     history.push({
       pathname: match.path, // get url: /todos
-      search: queryString.stringify(queryParams) // convert to string: 'status=all'
+      search: queryString.stringify(queryParams), // convert to string: 'status=all'
     });
-  }
+  };
 
   const handleShowCompleted = () => {
     const queryParams = { status: 'completed' };
     history.push({
       pathname: match.path, // get url: /todos
-      search: queryString.stringify(queryParams) // convert to string: 'status=completed'
+      search: queryString.stringify(queryParams), // convert to string: 'status=completed'
     });
-  }
+  };
 
   const handleShowNew = () => {
     const queryParams = { status: 'new' };
     history.push({
       pathname: match.path, // get url: /todos
-      search: queryString.stringify(queryParams) // convert to string: 'status=new'
+      search: queryString.stringify(queryParams), // convert to string: 'status=new'
     });
-  }
+  };
 
-  const renderedTodoList = todoList.filter(todo => filteredStatus === 'all' || todo.status === filteredStatus);
+  const renderedTodoList = todoList.filter((todo) => filteredStatus === 'all' || todo.status === filteredStatus);
 
   return (
     <div>
