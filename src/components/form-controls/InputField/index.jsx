@@ -16,15 +16,17 @@ function InputField(props) {
   const { form, name, label, disabled } = props;
   const { formState } = form;
   const { errors } = formState;
-  const hasErrors =
-    Object.entries(errors).length > 0 &&
-    formState.touchedFields[name] !== undefined;
+  const hasErrors = errors[name];
+  // Object.entries(errors).length > 0 &&
+  // formState.touchedFields[name] !== undefined;
   return (
     <Controller
       name={name}
       control={form.control}
       render={({ field }) => (
         <TextField
+          variant="outlined"
+          margin="normal"
           {...field}
           fullWidth
           label={label}

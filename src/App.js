@@ -4,6 +4,7 @@ import AlbumFeature from './features/Album';
 import { Route } from 'react-router';
 import categoryApi from './api/categoryApi';
 import CounterFeature from './features/Counter';
+import Header from 'components/Header';
 
 function App() {
   useEffect(() => {
@@ -16,7 +17,8 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="app">
+      <Header />
       Home Page
       <Route path="/" component={CounterFeature} exact />
       <Route path="/todos" component={TodoFeature} />
