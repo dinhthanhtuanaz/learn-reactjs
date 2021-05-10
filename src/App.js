@@ -3,6 +3,7 @@ import TodoFeature from './features/Todo';
 import AlbumFeature from './features/Album';
 import { Route } from 'react-router';
 import categoryApi from './api/categoryApi';
+import CounterFeature from './features/Counter';
 
 function App() {
   useEffect(() => {
@@ -17,6 +18,7 @@ function App() {
   return (
     <div className="App">
       Home Page
+      <Route path="/" component={CounterFeature} exact />
       <Route path="/todos" component={TodoFeature} />
       <Route path="/albums" component={AlbumFeature} />
     </div>
